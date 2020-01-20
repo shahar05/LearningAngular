@@ -1,0 +1,40 @@
+
+
+<table border="1">  
+    <tr>
+    <th>
+            index
+    </th>
+    <th>
+            name
+    </th>
+    <th>
+            age
+    </th>
+    <th>
+            gender
+    </th>
+</tr>
+
+
+<tr   (click)="deleteElement(key.id)"  *ngFor="let key of people; let i=index" >
+
+    <td>
+        {{i+1}}
+    </td>
+    <td>
+        {{key.name}}
+    </td>
+    <td>
+        {{key.age}}
+    </td>
+    <td>
+        {{key.gender}}
+    </td>
+    
+</tr>
+        
+
+</table>
+
+<button (click)="pushElement()"> add new Row</button>
