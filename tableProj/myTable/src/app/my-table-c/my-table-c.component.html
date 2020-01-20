@@ -1,40 +1,60 @@
 
 
-<table border="1">  
+
+    <input type="text" [(ngModel)]="postId" >
+    <button  (click)="getPostById(postId)" >Get Post!</button>
+
+    <p>here is the post</p>
+
+    <div *ngIf=" newPost"  >
+                {{this.newPost.title}}
+    </div>
+
+
+
+<table border="1">
     <tr>
-    <th>
+        <th>
             index
-    </th>
-    <th>
+        </th>
+        <th>
             name
-    </th>
-    <th>
+        </th>
+        <th>
             age
-    </th>
-    <th>
+        </th>
+        <th>
             gender
-    </th>
-</tr>
+        </th>
+    </tr>
 
 
-<tr   (click)="deleteElement(key.id)"  *ngFor="let key of people; let i=index" >
+    <tr (click)="deleteElement(person.id)" *ngFor="let person of people; let i=index">
 
-    <td>
-        {{i+1}}
-    </td>
-    <td>
-        {{key.name}}
-    </td>
-    <td>
-        {{key.age}}
-    </td>
-    <td>
-        {{key.gender}}
-    </td>
-    
-</tr>
-        
+        <td>
+            {{i+1}}
+        </td>
+        <td>
+            {{person.name}}
+        </td>
+        <td>
+            {{person.age}}
+        </td>
+        <td>
+            {{person.gender}}
+        </td>
+
+    </tr>
+
 
 </table>
 
 <button (click)="pushElement()"> add new Row</button>
+
+
+
+<p>All posts starts here</p>
+
+<div  *ngFor = "let post of allPosts" >
+        {{post.title}}
+</div>

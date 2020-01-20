@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output ,EventEmitter  } from '@angular/core';
-//import { EventEmitter } from 'protractor';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { PostsService } from '../posts.service';
 
 
 @Component({
@@ -10,28 +10,40 @@ import { Component, OnInit, Input, Output ,EventEmitter  } from '@angular/core';
 
 export class MyTableCComponent implements OnInit {
 
-  @Input() people : any[];
-  @Output() clickRow : EventEmitter<Number> = new EventEmitter<Number>();
-  //@Output() valueChange = new EventEmitter();
-
-  constructor() { 
+  @Input() people: any[];
+  @Output() clickRow: EventEmitter<Number> = new EventEmitter<Number>();
+  allPosts;
+  newPost;
+  constructor(private postService : PostsService) {
 
   }
 
   ngOnInit() {
+    this.postService.getAllPosts().subscribe((posts)=>{
+        this.allPosts = posts;
+    });
   }
 
-  deleteElement(id){
-    
-      this.clickRow.emit(id);
-      
+
+  getPostById(postId){
+
+    this.postService.getPostById(postId).subscribe((post)=>{
+        this.newPost = post;
+
+    })
   }
 
-  pushElement(){
+  deleteElement(id) {
+    this.clickRow.emit(id);
+  }
+
+  pushElement() {
     this.people.push(
-      {id: new Date().getTime() + 10, name: new Date().getTime() +" " , age:"82" , gender:"Male" }
-     );
+      { id: new Date().getTime() + 10, name: new Date().getTime() + " ", age: "82", gender: "Male" }
+    );
   }
 
+
+  
 
 }

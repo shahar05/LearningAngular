@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NetService {
 
+
+    
   people:any  = [
 
     {id: new Date().getTime() + 0, name: 'Shahar' , age:"32" , gender:"Male" },
@@ -14,8 +17,17 @@ export class NetService {
 
   ];
 
+  constructor(  private httpClient : HttpClient ) { }
 
-  constructor() { }
 
+    getAllPosts(){
+     return this.httpClient.get( "https://jsonplaceholder.typicode.com/posts");
+    }
 
+    getPostById(postId){
+
+      return this.httpClient.get( "https://jsonplaceholder.typicode.com/posts/" + postId);
+
+    }
+  
 }

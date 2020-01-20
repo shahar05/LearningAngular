@@ -1,8 +1,8 @@
 
 
   import { Component } from '@angular/core';
-  import{NetService} from './net.service'
-import { log } from 'util';
+  import {NetService} from './net.service'
+  import { log } from 'util';
 @Component({
   selector: 'app-root' ,
   templateUrl: './app.component.html',
@@ -12,18 +12,15 @@ import { log } from 'util';
 export class AppComponent {
 
   title = 'myTable';
-
+  people:any[]
   constructor( private netService : NetService  ){
-
+    this.people =this.netService.people; 
   }
 
 deleteElement(id){
-  
   console.log(id);
-  
-  this.netService.people  = this.netService.people.filter( p => p.id != id  );
-  
-}
+  this.people  = this.people.filter( p => p.id !== id  );
 
+}
   
 }
