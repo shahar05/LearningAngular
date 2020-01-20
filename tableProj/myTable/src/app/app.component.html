@@ -1,7 +1,7 @@
 
 
 
-<app-my-table-c [people] = "netService.people" > </app-my-table-c>
+<app-my-table-c  (clickRow)="deleteElement(id)"  [people] = "netService.people" > </app-my-table-c>
 
 <app-input-data-bind   >   </app-input-data-bind  >
 

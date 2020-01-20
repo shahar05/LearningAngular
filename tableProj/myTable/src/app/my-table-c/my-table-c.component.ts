@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { EventEmitter } from 'protractor';
+import { Component, OnInit, Input, Output ,EventEmitter  } from '@angular/core';
+//import { EventEmitter } from 'protractor';
 
 
 @Component({
@@ -11,7 +11,8 @@ import { EventEmitter } from 'protractor';
 export class MyTableCComponent implements OnInit {
 
   @Input() people : any[];
-  //@Output() clickRow : EventEmitter = new EventEmitter<any>();
+  @Output() clickRow : EventEmitter<Number> = new EventEmitter<Number>();
+  //@Output() valueChange = new EventEmitter();
 
   constructor() { 
 
@@ -21,11 +22,9 @@ export class MyTableCComponent implements OnInit {
   }
 
   deleteElement(id){
-      this.people  = this.people.filter( p => p.id != id  );
-
-
-
-
+    
+      this.clickRow.emit(id);
+      
   }
 
   pushElement(){
