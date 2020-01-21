@@ -6,14 +6,14 @@ import { NetService } from './net.service';
 })
 export class PostsService {
 
-  constructor(private netService : NetService) { }
+  constructor(private netService: NetService) { }
 
-  getPosts(){
+  getPosts() {
     return this.netService.getPosts();
   }
 
-  getPostById(postId){
-    
+  getPostById(postId) {
+
     return this.netService.getPostById(postId);
 
   }

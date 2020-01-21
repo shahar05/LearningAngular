@@ -8,9 +8,9 @@ describe('InputDataBindComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InputDataBindComponent ]
+      declarations: [InputDataBindComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

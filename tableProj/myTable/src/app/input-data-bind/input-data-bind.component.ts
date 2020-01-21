@@ -15,17 +15,17 @@ export class InputDataBindComponent implements OnInit {
   ngOnInit() {
   }
 
-  writeTheChar(  event ){
-      console.log(event);
+  writeTheChar(event) {
+    console.log(event);
 
-      this.name = event.target.value;
+    this.name = event.target.value;
 
     //  this.name += event.key
 
-      
+
   }
 
-  reset(){
+  reset() {
     this.name = "";
   }
 

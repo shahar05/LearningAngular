@@ -8,17 +8,17 @@ import { PostsService } from '../posts.service';
 export class ShowPostComponent implements OnInit {
   posts;
   selectedPost;
-  constructor(private postService : PostsService) { }
+  constructor(private postService: PostsService) { }
 
   ngOnInit() {
-    this.postService.getPosts().subscribe((posts)=>{
+    this.postService.getPosts().subscribe((posts) => {
       this.posts = posts;
-  });
+    });
   }
-  getPostById(postId){
+  getPostById(postId) {
 
-    this.postService.getPostById(postId).subscribe((post)=>{
-        this.selectedPost = post;
+    this.postService.getPostById(postId).subscribe((post) => {
+      this.selectedPost = post;
 
     })
   }
