@@ -1,0 +1,19 @@
+
+    <input type="text" [(ngModel)]="postId" >
+    <button  (click)="getPostById(postId)" >Get Post!</button>
+
+    <p>here is the post</p>
+
+    <div *ngIf=" selectedPost"  >
+                {{this.selectedPost.title}}
+    </div>
+    <div *ngIf=" !selectedPost"  >
+        dont have A post Yet
+</div>
+
+
+    <p>All posts starts here</p>
+
+<div  *ngFor = "let post of posts" >
+        {{post.title}}
+</div>

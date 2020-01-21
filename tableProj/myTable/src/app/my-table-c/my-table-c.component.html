@@ -1,17 +1,5 @@
 
 
-
-    <input type="text" [(ngModel)]="postId" >
-    <button  (click)="getPostById(postId)" >Get Post!</button>
-
-    <p>here is the post</p>
-
-    <div *ngIf=" newPost"  >
-                {{this.newPost.title}}
-    </div>
-
-
-
 <table border="1">
     <tr>
         <th>
@@ -53,8 +41,3 @@
 
 
 
-<p>All posts starts here</p>
-
-<div  *ngFor = "let post of allPosts" >
-        {{post.title}}
-</div>

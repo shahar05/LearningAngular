@@ -4,15 +4,15 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { MyTableCComponent } from './my-table-c/my-table-c.component';
-import { TableRowComponenetComponent } from './table-row-componenet/table-row-componenet.component';
 import { InputDataBindComponent } from './input-data-bind/input-data-bind.component';
+import { ShowPostComponent } from './show-post/show-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyTableCComponent,
-    TableRowComponenetComponent,
-    InputDataBindComponent
+    InputDataBindComponent,
+    ShowPostComponent
   ],
   imports: [
     BrowserModule,

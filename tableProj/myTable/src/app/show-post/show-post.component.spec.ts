@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableRowComponenetComponent } from './table-row-componenet.component';
+import { ShowPostComponent } from './show-post.component';
 
-describe('TableRowComponenetComponent', () => {
-  let component: TableRowComponenetComponent;
-  let fixture: ComponentFixture<TableRowComponenetComponent>;
+describe('ShowPostComponent', () => {
+  let component: ShowPostComponent;
+  let fixture: ComponentFixture<ShowPostComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableRowComponenetComponent ]
+      declarations: [ ShowPostComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TableRowComponenetComponent);
+    fixture = TestBed.createComponent(ShowPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
