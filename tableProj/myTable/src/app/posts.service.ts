@@ -8,8 +8,8 @@ export class PostsService {
 
   constructor(private netService : NetService) { }
 
-  getAllPosts(){
-    return this.netService.getAllPosts();
+  getPosts(){
+    return this.netService.getPosts();
   }
 
   getPostById(postId){
